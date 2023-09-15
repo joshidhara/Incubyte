@@ -89,6 +89,37 @@ void testSpacecraftMovementAndRotation() {
     } else {
         cout << "Test 8 Failed\n";
     }
+    spacecraft = Chandrayaan(); // Reset spacecraft
+    spacecraft.processCommand("u");
+    if (spacecraft.getX() == 0 && spacecraft.getY() == 0 && spacecraft.getZ() == 0 &&
+        spacecraft.getDirection() == "U") {
+        cout << "Test 9 Passed\n";
+    } else {
+        cout << "Test 9 Failed\n";
+    }
+
+    // Test turning down from N to D
+    spacecraft = Chandrayaan(); // Reset spacecraft
+    spacecraft.processCommand("d");
+    if (spacecraft.getX() == 0 && spacecraft.getY() == 0 && spacecraft.getZ() == 0 &&
+        spacecraft.getDirection() == "D") {
+        cout << "Test 10 Passed\n";
+    } else {
+        cout << "Test 10 Failed\n";
+    }
+    //Turning N to E to U to N
+    spacecraft = Chandrayaan(); // Reset spacecraft
+    spacecraft.processCommand("r");
+    spacecraft.processCommand("u");
+    spacecraft.processCommand("l");
+
+    if (spacecraft.getX() == 0 && spacecraft.getY() == 0 && spacecraft.getZ() == 0 &&
+        spacecraft.getDirection() == "N") {
+        cout << "Test 11 Passed\n";
+    } else {
+        cout << "Test 11 Failed\n";
+    }
+    
 
 }
 

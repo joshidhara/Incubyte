@@ -182,7 +182,7 @@ class Chandrayaan{
 int main()
 {
     Chandrayaan spacecraft;
-    vector<string> commands = {"f", "r","r","b","b"};
+    vector<string> commands = {"f", "r", "u","b","l"};
     for (string cmd : commands)
     {
         spacecraft.processCommand(cmd);
