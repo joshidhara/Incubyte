@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <string>
 using namespace std;
 class Chandrayaan{
@@ -14,6 +13,21 @@ class Chandrayaan{
         y=0;
         z=0;
         dir="N";
+    }
+    int getX() const {
+        return x;
+    }
+
+    int getY() const {
+        return y;
+    }
+
+    int getZ() const {
+        return z;
+    }
+
+    string getDirection() const {
+        return dir;
     }
     void move(string direction)
     {
@@ -91,35 +105,9 @@ class Chandrayaan{
             this->move(cmd);
         }
     }
-    int getX() const {
-        return x;
-    }
-
-    int getY() const {
-        return y;
-    }
-
-    int getZ() const {
-        return z;
-    }
-
-    string getDirection() const {
-        return dir;
-    }
     void displayPose()
     {
         cout << "Final Position: (" << this->x << ", " << this->y << ", " << this->z << ")\n";
         cout <<"Final Direction:"<< this->dir << endl;
     }
 };
-
-int main()
-{
-    Chandrayaan spacecraft;
-    vector<string> commands = {"f", "r","r","b","b"};
-    for (string cmd : commands)
-    {
-        spacecraft.processCommand(cmd);
-    }
-    spacecraft.displayPose();
-}
